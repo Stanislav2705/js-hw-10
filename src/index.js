@@ -21,7 +21,7 @@ function handleSearchCountries(e) {
   if (!value) {
     return;
   }
-  fetchCountries(e.target.value.trim())
+  fetchCountries(value)
     .then(data => {
       if (data.length > 10) {
         Notify.info(
@@ -29,6 +29,7 @@ function handleSearchCountries(e) {
         );
       }
       if (data.length <= 10) {
+        listRef.innerHTML = generateContentList(data);
       }
       if (data.length === 1) {
         listRef.innerHTML = '';
