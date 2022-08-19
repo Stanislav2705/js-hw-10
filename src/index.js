@@ -8,7 +8,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const DEBOUNCE_DELAY = 300;
 
 const inputRef = document.querySelector('#search-box');
-const listRef = document.querySelector('.coutry-list');
+const listRef = document.querySelector('.country-list');
 const cardRef = document.querySelector('.country-info');
 
 inputRef.addEventListener(
@@ -29,6 +29,7 @@ function handleSearchCountries(e) {
         );
       }
       if (data.length <= 10) {
+        cardRef.innerHTML = '';
         listRef.innerHTML = generateContentList(data);
       }
       if (data.length === 1) {

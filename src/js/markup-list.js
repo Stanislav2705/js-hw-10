@@ -1,13 +1,13 @@
 function createList(acc, countryCard) {
   return (
     acc +
-    `<li>
+    `<li class="country">
       <img
         src="${countryCard.flags.svg}"
-        alt="${countryCard.name}"
+        alt="${countryCard.name.common}"
         width="50"
       />
-      <h2>${countryCard.name}</h2>
+      <h2>${countryCard.name.common}</h2>
     </li>`
   );
 }
